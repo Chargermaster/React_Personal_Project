@@ -9,7 +9,10 @@ const RenderCards = ({ cards, setCards }) => {
   const handleCardClick = (id) => {
     setShowEditCard(true);
     setCurrentCardId(id);
-    console.log(id);
+  };
+
+  const handleDragStart = (event, id) => {
+    event.dataTransfer.setData("text/plain", id);
   };
 
   return (
@@ -19,6 +22,8 @@ const RenderCards = ({ cards, setCards }) => {
           className="cardSharedStyle"
           onClick={() => handleCardClick(e.id)}
           key={e.id}
+          draggable
+          onDragStart={(event) => handleDragStart(event, e.id)}
         >
           <div>
             <div>{e.name}</div>
