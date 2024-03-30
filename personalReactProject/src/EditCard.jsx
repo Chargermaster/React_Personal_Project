@@ -9,7 +9,7 @@ const EditCard = ({
   currentCardId,
 }) => {
   const [editCardName, setEditedCardName] = useState(
-    cards[currentCardId - 1].name
+    cards.find((card) => card.id === currentCardId)?.name || null
   );
 
   const handleCardInfoBox = (e) => {
@@ -20,12 +20,13 @@ const EditCard = ({
 
   const handleDeleteCard = () => {
     const newCardsArray = cards.filter((card) => card.id !== currentCardId);
-    const updateNewCardsArrayIds = newCardsArray.map((card, index) => ({
-      ...card,
-      id: index + 1,
-    }));
+    // const updateNewCardsArrayIds = newCardsArray.map((card, index) => ({
+    //   ...card,
+    //   id: index + 1,
+    // }));
     setShowEditCard(!showEditCard);
-    setCards(updateNewCardsArrayIds);
+    // setCards(updateNewCardsArrayIds);
+    setCards(newCardsArray);
   };
 
   const handleCardNameChange = (e) => {
