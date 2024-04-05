@@ -2,6 +2,7 @@ import React from "react";
 import RenderCards from "./RenderCards";
 import AddTaskButton from "./AddTaskButton";
 import { globalCardId } from "./MainBody";
+import { Link } from "react-router-dom";
 
 const MainContent = ({
   idTracker,
@@ -24,7 +25,7 @@ const MainContent = ({
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, "taskDiv")}
         >
-          Tasks
+          <Link to="/Tasks">Tasks</Link>
           <RenderCards cards={cards} setCards={setCards} />
           <AddTaskButton cards={cards} setCards={setCards} />
         </div>
@@ -34,7 +35,7 @@ const MainContent = ({
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, "doingDiv")}
         >
-          Doing
+          <Link to="/Doing">Doing</Link>
           <RenderCards cards={doingCards} setCards={setDoingCards} />
         </div>
         <div
@@ -43,7 +44,7 @@ const MainContent = ({
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, "doneDiv")}
         >
-          Done
+          <Link to="/Done">Done</Link>
           <RenderCards cards={doneCards} setCards={setDoneCards} />
         </div>
       </main>

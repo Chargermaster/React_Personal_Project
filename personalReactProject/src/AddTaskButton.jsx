@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { globalCardId } from "./MainBody";
+import Button from "@material-ui/Core/Button";
 
 const AddTaskButton = ({ cards, setCards }) => {
   const { idTracker, setIdTracker } = useContext(globalCardId);
@@ -17,7 +18,13 @@ const AddTaskButton = ({ cards, setCards }) => {
     setIdTracker((prevId) => prevId + 1);
   };
 
-  return <button onClick={addCard}>AddTaskButton</button>;
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={addCard}>
+        Add Task
+      </Button>
+    </>
+  );
 };
 
 export default AddTaskButton;

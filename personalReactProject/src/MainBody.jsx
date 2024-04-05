@@ -2,6 +2,9 @@ import React, { createContext, useContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./MainBody.css";
 import MainContent from "./MainContent";
+import Tasks from "./Tasks";
+import Doing from "./Doing";
+import Done from "./Done";
 
 const globalCardId = createContext(0);
 
@@ -78,7 +81,58 @@ const MainBody = () => {
               setDoneCards={setDoneCards}
             />
           }
-        ></Route>
+        />
+        <Route
+          path="/Tasks"
+          element={
+            <Tasks
+              idTracker={idTracker}
+              setIdTracker={setIdTracker}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
+              cards={cards}
+              setCards={setCards}
+              doingCards={doingCards}
+              setDoingCards={setDoingCards}
+              doneCards={doneCards}
+              setDoneCards={setDoneCards}
+            />
+          }
+        />
+        <Route
+          path="/Doing"
+          element={
+            <Doing
+              idTracker={idTracker}
+              setIdTracker={setIdTracker}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
+              cards={cards}
+              setCards={setCards}
+              doingCards={doingCards}
+              setDoingCards={setDoingCards}
+              doneCards={doneCards}
+              setDoneCards={setDoneCards}
+            />
+          }
+        />
+        <Route
+          path="/Done"
+          element={
+            <Done
+              idTracker={idTracker}
+              setIdTracker={setIdTracker}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
+              cards={cards}
+              setCards={setCards}
+              doingCards={doingCards}
+              setDoingCards={setDoingCards}
+              doneCards={doneCards}
+              setDoneCards={setDoneCards}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
