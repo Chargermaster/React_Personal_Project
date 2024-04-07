@@ -11,7 +11,8 @@ const AddTaskButton = ({ cards, setCards }) => {
       ...cards,
       {
         id: newId,
-        name: `${idTracker}`,
+        name: `Click to edit`,
+        content: "Content",
       },
     ]);
 

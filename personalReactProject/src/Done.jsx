@@ -1,18 +1,14 @@
 import React from "react";
 import RenderCards from "./RenderCards";
-import AddTaskButton from "./AddTaskButton";
 import { globalCardId } from "./MainBody";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/Core/Button";
 
 const Done = ({
   idTracker,
   setIdTracker,
   handleDragOver,
   handleDrop,
-  cards,
-  setCards,
-  doingCards,
-  setDoingCards,
   doneCards,
   setDoneCards,
 }) => {
@@ -25,8 +21,14 @@ const Done = ({
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, "doneDiv")}
         >
-          Done
+          <p>Done</p>
           <RenderCards cards={doneCards} setCards={setDoneCards} />
+
+          <Link to="/">
+            <Button variant="contained" color="primary">
+              Return
+            </Button>
+          </Link>
         </div>
       </main>
     </globalCardId.Provider>

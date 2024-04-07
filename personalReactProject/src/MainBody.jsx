@@ -92,10 +92,6 @@ const MainBody = () => {
               handleDrop={handleDrop}
               cards={cards}
               setCards={setCards}
-              doingCards={doingCards}
-              setDoingCards={setDoingCards}
-              doneCards={doneCards}
-              setDoneCards={setDoneCards}
             />
           }
         />
@@ -107,12 +103,8 @@ const MainBody = () => {
               setIdTracker={setIdTracker}
               handleDragOver={handleDragOver}
               handleDrop={handleDrop}
-              cards={cards}
-              setCards={setCards}
               doingCards={doingCards}
               setDoingCards={setDoingCards}
-              doneCards={doneCards}
-              setDoneCards={setDoneCards}
             />
           }
         />
@@ -124,10 +116,6 @@ const MainBody = () => {
               setIdTracker={setIdTracker}
               handleDragOver={handleDragOver}
               handleDrop={handleDrop}
-              cards={cards}
-              setCards={setCards}
-              doingCards={doingCards}
-              setDoingCards={setDoingCards}
               doneCards={doneCards}
               setDoneCards={setDoneCards}
             />
